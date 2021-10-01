@@ -1,15 +1,18 @@
 @import "./partials/vars";
 @import "./partials/global";
+.topbar {
+  background-color: $color-main;
+  padding: $base-padding;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-text;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+}
 header {
-  .topbar {
-    background-color: $color-main;
-    padding: $base-padding;
-    text-align: center;
-    text-transform: uppercase;
-    color: $color-text;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-bold;
-  }
+  position: sticky;
+  top: 0;
+  background-color: $color-background;
   .first-nav {
     padding: $base-padding * 1.5;
     border-bottom: 1px solid $color-secondary;
@@ -79,4 +82,10 @@ header {
       color: $color-main;
     }
   }
+}
+main {
+  min-height: 120vh;
+  background-image: url("../images/hero.png");
+  background-position: center;
+  background-size: cover;
 }
