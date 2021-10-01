@@ -1,6 +1,7 @@
 @import "./partials/vars";
 @import "./partials/global";
 .topbar {
+  user-select: none;
   background-color: $color-main;
   padding: $base-padding;
   text-align: center;
@@ -140,22 +141,24 @@ main {
     .carousel__items-wrapper {
       position: absolute;
       inset: 0;
-      .carousel__item-1 {
-        background-image: url("../images/hero1.png");
-      }
-      .carousel__item-2 {
-        background-image: url("../images/hero.png");
-      }
-      .carousel__item-3 {
-        background-image: url("../images/hero.png");
-      }
-      .carousel__item-4 {
-        background-image: url("../images/hero.png");
+      overflow: hidden;
+      img,
+      picture {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+        background-attachment: fixed;
       }
       .carousel__item {
+        content-visibility: auto;
         &.active {
           opacity: 1;
+          visibility: visible;
         }
+
         transition: opacity 0.3s;
         opacity: 0;
         background-size: cover;
